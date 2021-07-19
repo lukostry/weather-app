@@ -121,12 +121,11 @@ export const Main = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <div style={{ padding: 20 }}>
+      <div className={classes.gridWrapper}>
         <Grid
           component="section"
           container
           spacing={2}
-          className={classes.grid}
           justifyContent="space-around"
         >
           {state.defaultLocations.loading && <CircularProgress />}

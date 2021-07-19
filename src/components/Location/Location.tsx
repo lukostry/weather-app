@@ -62,56 +62,59 @@ export const Location = () => {
           <Typography variant="h6">{params.place}</Typography>
         </Toolbar>
       </AppBar>
-      <Grid
-        className={classes.wrapper}
-        container
-        spacing={2}
-        justifyContent="center"
-      >
-        {loading && <CircularProgress />}
-        {location && (
-          <>
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent>
-                  <Typography variant="h6">
-                    {location.weather[0]?.main}
-                  </Typography>
-                  <Typography variant="h2">
-                    {Math.round(location.main.temp)}°C
-                  </Typography>
-                  <Typography>
-                    Lo: {location.main.temp_min}°C, Hi: {location.main.temp_max}
-                    °C
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Card className={classes.card}>
-                <CardContent className={classes.detailsWrapper}>
-                  <div className={classes.weatherDetail}>
-                    <Typography variant="h6">Sunrise:</Typography>
-                    {dateFromTimestamp(location.sys.sunrise)}
-                  </div>
-                  <div className={classes.weatherDetail}>
-                    <Typography variant="h6">Sunset:</Typography>
-                    {dateFromTimestamp(location.sys.sunset)}
-                  </div>
-                  <div className={classes.weatherDetail}>
-                    <Typography variant="h6">Humidity:</Typography>
-                    {location.main.humidity}%
-                  </div>
-                  <div className={classes.weatherDetail}>
-                    <Typography variant="h6">Visibility:</Typography>
-                    {location.visibility / 1000}km
-                  </div>
-                </CardContent>
-              </Card>
-            </Grid>
-          </>
-        )}
-      </Grid>
+      <div className={classes.gridWrapper}>
+        <Grid
+          className={classes.wrapper}
+          container
+          spacing={2}
+          justifyContent="center"
+        >
+          {loading && <CircularProgress />}
+          {location && (
+            <>
+              <Grid item xs={12} sm={4}>
+                <Card className={classes.card}>
+                  <CardContent>
+                    <Typography variant="h6">
+                      {location.weather[0]?.main}
+                    </Typography>
+                    <Typography variant="h2">
+                      {Math.round(location.main.temp)}°C
+                    </Typography>
+                    <Typography>
+                      Lo: {location.main.temp_min}°C, Hi:{" "}
+                      {location.main.temp_max}
+                      °C
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <Card className={classes.card}>
+                  <CardContent className={classes.detailsWrapper}>
+                    <div className={classes.weatherDetail}>
+                      <Typography variant="h6">Sunrise:</Typography>
+                      {dateFromTimestamp(location.sys.sunrise)}
+                    </div>
+                    <div className={classes.weatherDetail}>
+                      <Typography variant="h6">Sunset:</Typography>
+                      {dateFromTimestamp(location.sys.sunset)}
+                    </div>
+                    <div className={classes.weatherDetail}>
+                      <Typography variant="h6">Humidity:</Typography>
+                      {location.main.humidity}%
+                    </div>
+                    <div className={classes.weatherDetail}>
+                      <Typography variant="h6">Visibility:</Typography>
+                      {location.visibility / 1000}km
+                    </div>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </>
+          )}
+        </Grid>
+      </div>
     </>
   );
 };

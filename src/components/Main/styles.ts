@@ -7,7 +7,7 @@ import {
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    grid: {
+    gridWrapper: {
       padding: "20px",
     },
     title: {
