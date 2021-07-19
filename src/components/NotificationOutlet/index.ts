@@ -1,1 +1,1 @@
-export * from './NotificationOutlet';
+export * from "./NotificationOutlet";
