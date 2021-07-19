@@ -19,7 +19,7 @@ Steps:
 REACT_APP_OPEN_WEATHER_API_KEY=MY_KEY
 ```
 2. Install dependencies: `yarn install`
-3. Runs the app in the development mode: `yarn start`
+3. Runs the app in the development mode: `yarn start` (by default it will be available under http://localhost:3000)
 
 ## Stack
 
